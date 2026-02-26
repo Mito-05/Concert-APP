@@ -1,3 +1,5 @@
+package classes;
+
 import java.util.Objects;
 
 public class Ticket {
@@ -68,6 +70,6 @@ public class Ticket {
     // toString method as requested
     @Override
     public String toString() {
-        return "Ticket for " + getTotalPrice() + " €";
+        return "classes.Ticket for " + getTotalPrice() + " €";
     }
 }

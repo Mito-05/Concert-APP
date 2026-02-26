@@ -1,3 +1,5 @@
+package classes;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -81,20 +83,21 @@ public class User {
     }
 
 
-    public void buyTicket(Concert concert, Ticket.EntryType type) {
+    public void buyTicket(Concert concert, Ticket.EntryType type)
+            throws exceptions.InactiveConcertException,
+            exceptions.ConcertAlreadyAttendedException,
+            exceptions.FullCapacityException {
+
         if (!concert.isActive()) {
-            System.out.println("Error: The concert is not active.");
-            return;
+            throw new exceptions.InactiveConcertException("The concert is not active.");
         }
 
         if (attendedConcerts.contains(concert)) {
-            System.out.println("Error: You have already attended this concert.");
-            return;
+            throw new exceptions.ConcertAlreadyAttendedException("You have already attended this concert.");
         }
 
         if (!concert.ticketsAvailable()) {
-            System.out.println("Error: No tickets available for this concert.");
-            return;
+            throw new exceptions.FullCapacityException("No tickets available for this concert.");
         }
 
         // Create the new ticket
@@ -109,15 +112,16 @@ public class User {
     }
 
 
-    public void rateConcert(Concert concert, int rating) {
+    public void rateConcert(Concert concert, int rating)
+            throws exceptions.ConcertNotAttendedException,
+            exceptions.IncorrectRatingException {
+
         if (!attendedConcerts.contains(concert)) {
-            System.out.println("Error: You cannot rate a concert you haven't attended.");
-            return;
+            throw new exceptions.ConcertNotAttendedException("You cannot rate a concert you haven't attended.");
         }
 
         if (rating < 0 || rating > 10) {
-            System.out.println("Error: Rating must be between 0 and 10.");
-            return;
+            throw new exceptions.IncorrectRatingException("Rating must be between 0 and 10.");
         }
 
         ratings.put(concert, rating);

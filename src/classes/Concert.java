@@ -1,3 +1,5 @@
+package classes;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -97,9 +99,9 @@ public class Concert {
     }
 
 
-    public double calculateAveragePrice() {
+    public double calculateAveragePrice() throws exceptions.ZeroEntriesException {
         if (soldTickets.isEmpty()) {
-            return 0.0;
+            throw new exceptions.ZeroEntriesException("The concert has no sold tickets.");
         }
         return calculateRevenue() / soldTickets.size();
     }
@@ -109,9 +111,9 @@ public class Concert {
         return soldTickets.size() < maxCapacity;
     }
 
-    // toString as requested: "Concert by <artist> in <city>"
+    // toString as requested: "classes.Concert by <artist> in <city>"
     @Override
     public String toString() {
-        return "Concert by " + artist + " in " + city;
+        return "classes.Concert by " + artist + " in " + city;
     }
 }

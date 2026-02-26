@@ -1,15 +1,15 @@
-# 🎫 Concert Management System
+# 🎫 classes.Concert Management System
 
 A simple yet robust **Java-based** system designed to manage concert ticket sales, user attendance tracking, and financial revenue statistics.
 
 ## 🚀 Features
 
-* **Concert Management:** Track attendance capacity, base pricing, and active/inactive status.
-* **Ticket Categories:** Automatic surcharge calculation based on ticket type:
+* **classes.Concert Management:** Track attendance capacity, base pricing, and active/inactive status.
+* **classes.Ticket Categories:** Automatic surcharge calculation based on ticket type:
     * **Stands:** Base price.
     * **Track:** +10% surcharge.
     * **VIP:** +20% surcharge.
-* **User Validations:**
+* **classes.User Validations:**
     * Duplicate purchase restriction for the same event (one ticket per user).
     * Real-time seat availability checks.
 * **Rating System:** Users can rate concerts they have attended on a scale from 0 to 10.
@@ -26,9 +26,9 @@ A simple yet robust **Java-based** system designed to manage concert ticket sale
 ## 📂 Project Structure
 
 * `Main.java`: The entry point that simulates business logic and displays statistics.
-* `Concert.java`: Entity managing event data and revenue calculations.
-* `Ticket.java`: Defines access types and calculates final prices.
-* `User.java`: Represents the customer with purchase and validation logic.
+* `classes.Concert.java`: Entity managing event data and revenue calculations.
+* `classes.Ticket.java`: Defines access types and calculates final prices.
+* `classes.User.java`: Represents the customer with purchase and validation logic.
 
 ## 📊 Sample Output
 
@@ -41,6 +41,6 @@ Tickets by type -> TRACK: 2 | STANDS: 3 | VIP: 1
 Total revenue: 430.00 €
 Overall average ticket price: 71.67 €
 ----------------------------------------
-Top Selling Concert: Michael Jackson (3 tickets)
-Lowest Selling Concert: Cheese Atlantis (1 tickets)
+Top Selling classes.Concert: Michael Jackson (3 tickets)
+Lowest Selling classes.Concert: Cheese Atlantis (1 tickets)
 --- Thank you for using our Concerts ---
